@@ -122,20 +122,23 @@ p.notice-bar, p.alert-bar
   display: flex
   flex-direction: column
   align-items: center
+  $bar_height: 5*$u
+  padding-top: $bar_height + 2*$u
   #bar
+    top: 0
     display: flex
+    position: fixed
     background: $fg
     border-bottom: $border
     justify-content: center
     width: 100%
     font-family: $ui-font
     font-weight: 800
-    margin-bottom: 2*$u
     input,a
       all: unset
       display: block
-      height: 5*$u
-      line-height: 5*$u
+      height: $bar_height
+      line-height: $bar_height
     a, input[type=submit]
       cursor: pointer
       padding:

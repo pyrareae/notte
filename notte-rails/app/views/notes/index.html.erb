@@ -1,12 +1,13 @@
 <div id='note--index'>
   <div id='bar'>
     <%= form_with url: notes_url, method: :get do |f| %>
-      <%= link_to 'CLEAR', notes_url %>
+      <%= link_to 'NEW NOTE', new_note_url %>
       <%= f.text_field :query, 
                        placeholder: "search",
                        value: params[:query]
       %>
       <%= f.submit 'SEARCH', name: nil %>
+      <%= link_to 'CLEAR', notes_url %>
     <% end %>
   </div>
   <div id="notes">
