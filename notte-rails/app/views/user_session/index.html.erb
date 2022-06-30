@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>User sessions</h1>
+
+<div id="user_sessions">
+  <% @user_sessions.each do |user_session| %>
+    <%= render user_session %>
+    <p>
+      <%= link_to "Show this user session", user_session %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New user session", new_log_in_path %>

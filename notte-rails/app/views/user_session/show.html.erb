@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @user_session %>
+
+<div>
+  <%= link_to "Edit this user session", edit_log_in_path(@user_session) %> |
+  <%= link_to "Back to user sessions", log_in_path %>
+
+  <%= button_to "Destroy this user session", @user_session, method: :delete %>
+</div>
