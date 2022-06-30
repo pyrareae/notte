@@ -1,14 +1,14 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Notes</h1>
-
-<div id="notes">
-  <% @notes.each do |note| %>
-    <%= render note %>
-    <p>
-      <%= link_to "Show this note", note %>
-    </p>
+<div id='bar'>
+  <%= link_to 'clear', notes_url %>
+  <%= form_with url: notes_url, method: :get do |f| %>
+    <%= f.text_field :query %>
+    <%= f.submit 'Search', name: nil %>
   <% end %>
 </div>
-
-<%= link_to "New note", new_note_path %>
+<div id="notes">
+  <% @notes.each do |note| %>
+    <%= link_to note_url(note) do %>
+      <%= render note %>
+    <% end %>
+  <% end %>
+</div>

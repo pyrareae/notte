@@ -4,6 +4,10 @@ class NotesController < ApplicationController
   # GET /notes or /notes.json
   def index
     @notes = current_user.notes
+
+    if params[:query]
+      @notes = @notes.where 'note LIKE ?', "%#{params[:query]}%"
+    end
   end
 
   # GET /notes/1 or /notes/1.json
