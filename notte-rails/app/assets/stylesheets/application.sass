@@ -51,6 +51,28 @@ $u: 10px
   border: $border
   padding: $u
 
+// =long-text-shadow($color: $red, $length: 50)
+//   $value: ()
+//   @for $i from 1 through $length
+//     $shadow: #{$i}px #{$i}px $color
+//     $value: append($value, $shadow, comma)
+//   text-shadow: $value
+
+=control
+  all: unset
+  +box
+  display: inline-block
+  line-height: 2*$u
+  cursor: pointer
+  padding: $u
+  overflow: clip
+  font-family: $ui-font
+  font-weight: 800
+  &:hover
+    background: $dark
+    color: $red
+
+
 body, html
   background: $light
   color: $dark
@@ -60,8 +82,11 @@ body, html
 ::selection 
   background: $dark
   color: $red
+
+
 p.notice-bar, p.alert-bar
   display: block
+
 #note--index
   display: flex
   flex-direction: column
@@ -118,3 +143,33 @@ p.notice-bar, p.alert-bar
       cursor: pointer
       display: block
       background: $yellow
+
+#note--show
+  max-width: $page_width
+  width: 100%
+  padding: $u*2
+  #note
+    +box
+    +cast-shadow
+    display: block
+    background: $yellow
+    section.controls
+      display: flex
+      gap: $u
+    a, button, input
+      +control
+
+#note--edit
+  max-width: $page_width
+  width: 100%
+  padding: $u*2
+  #note
+    +box
+    +cast-shadow
+    display: block
+    background: $yellow
+    section.controls
+      display: flex
+      gap: $u
+    a, button, input
+      +control

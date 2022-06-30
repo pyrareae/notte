@@ -1,8 +1,12 @@
-<%= render @note %>
-
-<div>
-  <%= link_to "Edit", edit_note_path(@note) %> |
-  <%= link_to "Back", notes_path %>
-
-  <%= button_to "Delete", @note, method: :delete %>
+<div id='note--show'>
+  <div id='note'>
+    <section class='body'>
+      <%= simple_format @note.note %>
+    </section>
+    <section class='controls'>
+      <%= link_to "Edit", edit_note_path(@note) %>
+      <%= link_to "Back", notes_path %>
+      <%= button_to "Delete", @note, method: :delete %>
+    </section>
+  </div>
 </div>
