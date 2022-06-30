@@ -1,3 +1,120 @@
-// Entry point for your Sass build
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Maven+Pro:wght@400;800&display=swap')
 
-body
+$bitter-font: 'Bitter', serif
+$maven-font: 'Maven Pro', sans-serif
+
+$ui-font: $maven-font
+$body-font: $bitter-font
+ 
+$page_width: 900px
+$breakpoint: 900px
+
+$dark: #39373e
+$light: #fffdf1
+
+$yellow: #f9ffa8
+$blue: #a8bcff
+$green: #a9ffa8
+$red: #fa7d7d
+$purple: #e2a8ff
+
+$fg: #fffef9
+$selected: white
+
+$border: 2px solid $dark
+
+// Base unit to keep design in sync.
+// Most everything is using multiples of this.
+$u: 10px
+
+
+=desktop
+  @media (min-width: #{$breakpoint})
+    @content
+=mobile
+  @media (max-width: #{$breakpoint})
+    @content
+
+*
+  box-sizing: border-box
+
+=cast-shadow
+  box-shadow: $u/2 $u/2 0 0 $dark
+  transition: box-shadow 500ms
+
+=cast-shadow-hover
+  +cast-shadow
+  &:hover
+    box-shadow: $u $u 0 0 $dark
+
+=box
+  border: $border
+  padding: $u
+
+body, html
+  background: $light
+  color: $dark
+  padding: 0
+  margin: 0
+  font-family: $body-font
+::selection 
+  background: $dark
+  color: $red
+p.notice-bar, p.alert-bar
+  display: block
+#note--index
+  display: flex
+  flex-direction: column
+  align-items: center
+  #bar
+    display: flex
+    background: $fg
+    border-bottom: $border
+    justify-content: center
+    width: 100%
+    font-family: $ui-font
+    font-weight: 800
+    margin-bottom: 2*$u
+    input,a
+      all: unset
+      display: block
+      height: 5*$u
+      line-height: 5*$u
+    a, input[type=submit]
+      cursor: pointer
+      padding:
+        left: $u*2
+        right: $u*2
+      &:hover
+        background: $dark
+        color: $red
+    ::placeholder
+      color: $dark
+      font-weight: normal
+    > section,
+    > form
+      flex: 1
+      display: flex
+      gap: $u
+      max-width: $page_width
+      display: flex
+      input#query
+        flex: 1
+        font-weight: normal
+  #notes
+    max-width: $page_width
+    width: 100%
+    display: grid
+    padding:
+      left: $u*2
+      right: $u*2
+      bottom: $u*2
+    gap: 15px
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) // arcane grid rules
+    .note-outer
+      all: unset 
+      +box
+      +cast-shadow-hover
+      cursor: pointer
+      display: block
+      background: $yellow

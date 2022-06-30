@@ -1,14 +1,19 @@
-<div id='bar'>
-  <%= link_to 'clear', notes_url %>
-  <%= form_with url: notes_url, method: :get do |f| %>
-    <%= f.text_field :query %>
-    <%= f.submit 'Search', name: nil %>
-  <% end %>
-</div>
-<div id="notes">
-  <% @notes.each do |note| %>
-    <%= link_to note_url(note) do %>
-      <%= render note %>
+<div id='note--index'>
+  <div id='bar'>
+    <%= form_with url: notes_url, method: :get do |f| %>
+      <%= link_to 'CLEAR', notes_url %>
+      <%= f.text_field :query, 
+                       placeholder: "search",
+                       value: params[:query]
+      %>
+      <%= f.submit 'SEARCH', name: nil %>
     <% end %>
-  <% end %>
+  </div>
+  <div id="notes">
+    <% @notes.each do |note| %>
+      <%= link_to note_url(note), class: 'note-outer' do %>
+        <%= render note %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
