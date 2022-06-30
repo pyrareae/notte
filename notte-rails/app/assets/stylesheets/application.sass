@@ -68,16 +68,43 @@ $u: 10px
   overflow: clip
   font-family: $ui-font
   font-weight: 800
+  &.danger
+    border-color: $red
   &:hover
     background: $dark
     color: $red
 
+.page-section,
+body > section.page
+  max-width: $page_width
+  width: 100%
+  padding: $u*2
+
+section.controls
+  display: flex
+  > .right
+    margin-left: auto
+  gap: $u
+
+.note-box
+  +box
+  +cast-shadow
+  display: block
+  background: $yellow
+  width: 100%
+  section.controls
+    display: flex
+    gap: $u
+  a, button, input
+    +control
 
 body, html
   background: $light
   color: $dark
   padding: 0
   margin: 0
+  width: 100%
+  min-height: 100vh
   font-family: $body-font
   display: flex
   flex-direction: column
@@ -91,6 +118,7 @@ p.notice-bar, p.alert-bar
   display: block
 
 #note--index
+  width: 100%
   display: flex
   flex-direction: column
   align-items: center
@@ -152,27 +180,22 @@ p.notice-bar, p.alert-bar
   width: 100%
   padding: $u*2
   #note
-    +box
-    +cast-shadow
-    display: block
-    background: $yellow
-    section.controls
-      display: flex
-      gap: $u
-    a, button, input
-      +control
+    @extend .note-box
 
 #note--edit
-  max-width: $page_width
-  width: 100%
-  padding: $u*2
-  #note
-    +box
-    +cast-shadow
-    display: block
-    background: $yellow
-    section.controls
-      display: flex
-      gap: $u
-    a, button, input
-      +control
+  @extend .page-section
+  form
+    @extend .note-box
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    gap: $u
+    textarea
+      all: unset
+      background: $light
+      padding: $u
+      min-height: 200px
+      border: $border
+
+#note--new
+  @extend #note--edit
