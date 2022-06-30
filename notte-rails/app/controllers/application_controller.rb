@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate!
 
   def current_user
     @current_user ||= UserSession.validate(session[:authorization] || request.headers['authorization'])

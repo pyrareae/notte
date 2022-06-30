@@ -1,5 +1,6 @@
 class UserSessionController < ApplicationController
   # POST /user_sessions or /user_sessions.json
+  skip_before_action :authenticate!
 
   def new
     redirect_to root_url if current_user
