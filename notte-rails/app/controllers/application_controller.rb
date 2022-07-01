@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate!
+  before_action :current_user # Adding as a filter to load the @current_user var to always be available for the layout template
 
   def current_user
     @current_user ||= UserSession.validate(session[:authorization] || request.headers['authorization'])
