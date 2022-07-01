@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Maven+Pro:wght@400;800&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;600&family=Maven+Pro:wght@400;800&display=swap')
 
 $bitter-font: 'Bitter', serif
 $maven-font: 'Maven Pro', sans-serif
@@ -74,6 +74,19 @@ $u: 10px
     background: $dark
     color: $red
 
+// The reason I'm using mixins instead of just extends is because mixins play much more nicely with all: unset
+=link
+  color: $dark
+  font-weight: bold
+  text-decoration: underline
+  &:hover
+    color: $red
+    background: $dark
+
+=text_input
+  +box
+  background: $fg
+
 .page-section,
 body > section.page
   max-width: $page_width
@@ -97,6 +110,13 @@ section.controls
     gap: $u
   a, button, input
     +control
+a
+  +link
+
+.linkified-button
+  all: unset
+  +link
+  display: inline
 
 body, html
   background: $light
@@ -202,3 +222,39 @@ p.notice-bar, p.alert-bar
 
 #note--new
   @extend #note--edit
+
+#root--footer
+  background: $fg
+  width: 100%
+  margin-top: auto
+  border-top: $border
+  padding: 0 $u
+  a
+    line-height: $u*3
+    font-family: $ui-font
+
+#sessions--new
+  +box
+  +cast-shadow
+  margin: $u*5
+  padding: $u*2
+  background: $fg
+  form
+    display: flex
+    flex-direction: column
+    gap: $u
+    label
+      font-family: $ui-font
+    input
+      all: unset
+      +text_input
+    a, input[type=submit]
+      text-transform: uppercase
+    .controls em
+      padding: 0 $u
+      display: inline-block
+    button, input[type=submit]
+      @extend .linkified-button
+
+#users--new
+  @extend #sessions--new

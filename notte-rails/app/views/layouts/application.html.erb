@@ -14,7 +14,7 @@
   <body>
     <%= render partial: 'layouts/flash' %>
     <%= yield %>
-    <div id='footer'>
+    <div id='root--footer'>
       <%= link_to 'LOG OUT', log_out_url if @current_user %>
     </div>
   </body>
