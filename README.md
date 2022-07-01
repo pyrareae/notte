@@ -6,9 +6,10 @@ There are 3 roles the projects can have, SPA app, MPA app, and API server. Some 
 
 |Directory|Server|Client|Notes|finished?|
 |---------|------|------|-----|---------|
-|notte-rails|OTW/API|MPA||No|
+|notte-rails|OTW/API|MPA||90%|
 |notte-laravel|MPA/API|MPA||No|
-|notte-vue|No|SPA||No|
+|notte-vue|No|SPA||WIP|
+|notte-angular-legacy|No|SPA||No|
 
 ## notte-rails
 Basic Rails 7 server. Using the new jsbundling asset pipeline. This is using html over the wire for the server ui and runs a json api for use with spa apps. I've skipped Devise and opted for a simple auth system because I felt like it.
