@@ -16,7 +16,11 @@ There are 3 roles the projects can have, SPA app, MPA app, and API server. Some 
 *SPA: Single Page Application  
 
 ## notte-rails
-Basic Rails 7 server. Using the new jsbundling asset pipeline. This is using html over the wire for the server ui and runs a json api for use with spa apps. I've skipped Devise and opted for a simple auth system because I felt like it.
+This is the first one and the reference. Basic Rails 7 server. Using the new jsbundling asset pipeline. This is using html over the wire for the server ui and runs a json api for use with spa apps. I've skipped Devise and opted for a simple auth system because I felt like it.
+
+### Remarks
+
+Rails is my "good ol' reliable" and usually "just works", but I'm used to using it. It gives you a lot for free, which is nice. The new HTML over the wire features are pretty nice and result in a snappy UI in this demo, without the fuss of using a full blown SPA.
 
 ## notte-laravel
 TODO
