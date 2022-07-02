@@ -14,6 +14,12 @@ export const useSessionStore = defineStore('session', {
     applyHeader() {
       ax.defaults.headers.common["authorization"] = `${this.token}`
     },
+    checkForStored() {
+      const restored = localStorage.getItem('auth')
+      if (!restored) return
+
+      this.token = restored
+    },
     logIn(username, password) {
       return new Promise((resolve, reject) => {
         if (this.isLoggedIn) return resolve(false)
@@ -22,6 +28,7 @@ export const useSessionStore = defineStore('session', {
           .then((resp) => {
             this.token = resp.data.token;
             this.applyHeader();
+            localStorage.setItem('auth', this.token)
             resolve(true);
           })
           .catch(reject);
@@ -31,6 +38,7 @@ export const useSessionStore = defineStore('session', {
     logOut() {
       this.token = null
       this.applyHeader();
+      localStorage.removeItem('auth')
     } 
   }
 })
