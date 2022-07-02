@@ -5,25 +5,35 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      redirect: '/notes'
+      path: "/",
+      redirect: "/notes",
     },
+    // {
+    //   path: "/notes",
+    //   name: "Notes",
+    //   component: () => import("../views/NotesView.vue"),
+    //   children: [
+    //     {
+    //       path: "/:id",
+    //       name: "Note",
+    //       component: () => import("../views/NoteView.vue"),
+    //     },
+    //     {
+    //       path: "/new",
+    //       name: "New Note",
+    //       component: () => import("../views/NewNoteView.vue"),
+    //     },
+    //   ]
+    // },
     {
       path: "/notes",
       name: "Notes",
       component: () => import("../views/NotesView.vue"),
-      children: [
-        {
-          path: ":id",
-          name: "Note",
-          component: () => import("../views/NoteView.vue"),
-        },
-        {
-          path: "new",
-          name: "New Note",
-          component: () => import("../views/NewNoteView.vue"),
-        },
-      ]
+    },
+    {
+      path: "/notes/:id",
+      name: "Note",
+      component: () => import("../views/NoteView.vue"),
     },
     {
       path: "/log_in",

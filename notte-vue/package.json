@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "lodash": "^4.17.21",
     "pinia": "^2.0.14",
-    "sugar": "^2.0.6",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16"
   },

@@ -1913,18 +1913,6 @@ strip-final-newline@^2.0.0:
   resolved "https://registry.yarnpkg.com/strip-final-newline/-/strip-final-newline-2.0.0.tgz#89b852fb2fcbe936f6f4b3187afb0a12c1ab58ad"
   integrity sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==
 
-sugar-core@^2.0.0:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/sugar-core/-/sugar-core-2.0.6.tgz#785e0cd64aa7302ea54d47bc1213efe52c006270"
-  integrity sha512-YmLFysR3Si6RImqL1+aB6JH81EXxvXn5iXhPf2PsjfoUYEwCxFDYCQY+zC3WqviuGWzxFaSkkJvkUE05Y03L5Q==
-
-sugar@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/sugar/-/sugar-2.0.6.tgz#aa08e389add27109fb35718598313e0503a4fc39"
-  integrity sha512-s0P2/pjJtAD9VA44+2Gqm3NdC4v+08melA6YubOxzshu628krTbn95/M2GWMrI9rYspZMpYBIrChR46fjQ7xsQ==
-  dependencies:
-    sugar-core "^2.0.0"
-
 supports-color@^7.1.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-7.2.0.tgz#1b7dcdcb32b8138801b3e478ba6a51caa89648da"

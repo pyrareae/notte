@@ -1,5 +1,5 @@
 <template>
-  <div id="note--index"><p>notes</p>
+  <div id="note--index">
     <nav id="bar">
       <router-link to="/notes/new">NEW NOTE</router-link>
       <input v-model="query" name="query" @keyup.enter="search" placeholder="search" />
@@ -28,6 +28,7 @@ export default {
     }
     const clear = () => {
       query.value=''
+      noteStore.fetch()
     }
 
     onMounted(() => {
@@ -38,6 +39,7 @@ export default {
       noteStore,
       search,
       clear,
+      query,
     }
   },
 }
