@@ -9,11 +9,11 @@
       </div>
       <div>
         <label for="password">Password</label>
-        <input v-model="login.password" id="password"/>
+        <input type="password" v-model="login.password" id="password"/>
       </div>
 
       <div class="controls">
-        <input type="submit" value="Log In"/>
+        <input @click="onSignIn" type="submit" value="Log In"/>
         <em>or</em>
         <router-link to="sign_up">Create Account</router-link>
       </div>
@@ -40,7 +40,7 @@ export default {
     const onSignIn = () => {
       sessionStore.logIn(login.username, login.password)
         .then(() => router.push('/notes'))
-        .catch(() => {errors = "Invalid username or password!"})
+        .catch((e) => {console.error(e); errors.value = "Invalid username or password!"})
     }
 
     return {onSignIn, login, errors}

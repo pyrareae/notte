@@ -12,15 +12,15 @@ export const useSessionStore = defineStore('session', {
   },
   actions: {
     applyHeader() {
-      axios.defaults.headers.common["authorization"] = `${this.token}`
+      ax.defaults.headers.common["authorization"] = `${this.token}`
     },
     logIn(username, password) {
       return new Promise((resolve, reject) => {
-        if (this.isLoggedIn()) return resolve(false)
+        if (this.isLoggedIn) return resolve(false)
 
-        ax.post(`${API_BASE}/log_in`)
+        ax.post(`${API_BASE}/log_in`, {user_session: {username, password}})
           .then((resp) => {
-            this.token = resp.token;
+            this.token = resp.data.token;
             this.applyHeader();
             resolve(true);
           })

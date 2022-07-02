@@ -1,1 +1,1 @@
-json.array! @user_sessions, partial: "user_sessions/user_session", as: :user_session
+json.array! @user_sessions, partial: "user_session/user_session", as: :user_session
