@@ -1,3 +1,7 @@
+window.API_BASE = import.meta.env.VITE_API_URL // eeeeviiiil global var for the sake of a bit of brevity
+
+import 'sugar'
+
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 

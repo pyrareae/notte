@@ -18,7 +18,7 @@ class UserSessionController < ApplicationController
     respond_to do |format|
       format.html { redirect_to root_url, notice: "You have successfully logged in!" }
       format.json { render :show, status: :created, location: @user_session }
-  end
+    end
   end
 
   # DELETE /user_sessions/1 or /user_sessions/1.json
