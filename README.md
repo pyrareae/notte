@@ -6,10 +6,15 @@ There are 3 roles the projects can have, SPA app, MPA app, and API server. Some 
 
 |Directory|Server|Client|Notes|finished?|
 |---------|------|------|-----|---------|
-|notte-rails|HOTW/API|MPA||90%|
-|notte-laravel|MPA/API|MPA||No|
-|notte-vue|No|SPA||WIP|
-|notte-angular-legacy|No|SPA||No|
+|notte-rails|HOTW/API|MPA||99%|
+|notte-sinatra|API|No||TODO|
+|notte-roda|API|No||TODO|
+|notte-laravel|MPA/API|MPA||TODO|
+|notte-vue|No|SPA||80%|
+|notte-react|No|SPA||TODO|
+|notte-angular-legacy|No|SPA||TODO|
+|notte-angular-2|No|SPA||TODO|
+|notte-express|API|No||TODO|
 
 *HOTW: HTML Over The Wire  
 *MPA: Multi Page Application, i.e., traditional server rendered pages  
