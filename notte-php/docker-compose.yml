@@ -3,7 +3,7 @@ services:
     web:
         image: nginx:latest
         ports:
-            - "80:80"
+            - "5000:80"
         volumes:
             - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
             - ./app:/app
@@ -20,10 +20,10 @@ services:
     mysql:
         image: mariadb:latest
         environment:
-            MYSQL_ROOT_PASSWORD: 'secret'
-            MYSQL_USER: 'tutorial'
-            MYSQL_PASSWORD: 'secret'
-            MYSQL_DATABASE: 'tutorial'
+            MYSQL_ROOT_PASSWORD: 'devel_password'
+            MYSQL_USER: 'notte'
+            MYSQL_PASSWORD: 'devel_password'
+            MYSQL_DATABASE: 'notte'
         volumes:
             - mysqldata:/var/lib/mysql
         ports:
