@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;600&family=Maven+Pro:wght@400;800&display=swap')
+
+$bitter-font: 'Bitter', serif
+$maven-font: 'Maven Pro', sans-serif
+
+$ui-font: $maven-font
+$body-font: $bitter-font
+ 
+$page_width: 900px
+$breakpoint: 900px
+
+$dark: #39373e
+$light: #fffdf1
+
+$yellow: #f9ffa8
+$blue: #a8bcff
+$green: #a9ffa8
+$red: #fa7d7d
+$purple: #e2a8ff
+
+$fg: #fffef9
+$selected: white
+
+$border: 2px solid $dark
+
+// Base unit to keep design in sync.
+// Most everything is using multiples of this.
+$u: 10px
+
+
+=desktop
+  @media (min-width: #{$breakpoint})
+    @content
+=mobile
+  @media (max-width: #{$breakpoint})
+    @content
+
+*
+  box-sizing: border-box
+
+=cast-shadow
+  box-shadow: $u/2 $u/2 0 0 $dark
+  transition: box-shadow 500ms
+
+=cast-shadow-hover
+  +cast-shadow
+  &:hover
+    box-shadow: $u $u 0 0 $dark
+
+=box
+  border: $border
+  padding: $u
+
+// =long-text-shadow($color: $red, $length: 50)
+//   $value: ()
+//   @for $i from 1 through $length
+//     $shadow: #{$i}px #{$i}px $color
+//     $value: append($value, $shadow, comma)
+//   text-shadow: $value
+
+=control
+  all: unset
+  +box
+  display: inline-block
+  line-height: 2*$u
+  cursor: pointer
+  padding: $u
+  overflow: clip
+  font-family: $ui-font
+  font-weight: 800
+  &.danger
+    border-color: $red
+  &:hover
+    background: $dark
+    color: $red
+
+// The reason I'm using mixins instead of just extends is because mixins play much more nicely with all: unset
+=link
+  color: $dark
+  font-weight: bold
+  text-decoration: underline
+  &:hover
+    color: $red
+    background: $dark
+
+=text_input
+  +box
+  background: $fg
+
+.page-section,
+body > section.page
+  max-width: $page_width
+  width: 100%
+  padding: $u*2
+
+section.controls
+  display: flex
+  > .right
+    margin-left: auto
+  gap: $u
+
+.note-box
+  +box
+  +cast-shadow
+  display: block
+  background: $yellow
+  width: 100%
+  section.controls
+    display: flex
+    gap: $u
+  a, button, input
+    +control
+a
+  +link
+
+.linkified-button
+  all: unset
+  +link
+  display: inline
+
+body, html
+  background: $light
+  color: $dark
+  padding: 0
+  margin: 0
+  width: 100%
+  min-height: 100vh
+  font-family: $body-font
+  display: flex
+  flex-direction: column
+  align-items: center
+::selection 
+  background: $dark
+  color: $red
+
+
+p.notice-bar, p.alert-bar
+  display: block
+
+#note--index
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  $bar_height: 5*$u
+  padding-top: $bar_height + 2*$u
+  #bar
+    top: 0
+    display: flex
+    position: fixed
+    background: $fg
+    border-bottom: $border
+    justify-content: center
+    width: 100%
+    font-family: $ui-font
+    font-weight: 800
+    input,a
+      all: unset
+      display: block
+      height: $bar_height
+      line-height: $bar_height
+    a, input[type=submit]
+      cursor: pointer
+      padding:
+        left: $u*2
+        right: $u*2
+      &:hover
+        background: $dark
+        color: $red
+    ::placeholder
+      color: $dark
+      font-weight: normal
+    > section,
+    > form
+      flex: 1
+      display: flex
+      gap: $u
+      max-width: $page_width
+      display: flex
+      input#query
+        flex: 1
+        font-weight: normal
+  #notes
+    max-width: $page_width
+    width: 100%
+    display: grid
+    padding:
+      left: $u*2
+      right: $u*2
+      bottom: $u*2
+    gap: 15px
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) // arcane grid rules
+    .note-outer
+      all: unset 
+      +box
+      +cast-shadow-hover
+      cursor: pointer
+      display: block
+      background: $yellow
+
+#note--show
+  max-width: $page_width
+  width: 100%
+  padding: $u*2
+  #note
+    @extend .note-box
+
+#note--edit
+  @extend .page-section
+  form
+    @extend .note-box
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    gap: $u
+    textarea
+      all: unset
+      background: $light
+      padding: $u
+      min-height: 200px
+      border: $border
+
+#note--new
+  @extend #note--edit
+
+#root--footer
+  background: $fg
+  width: 100%
+  margin-top: auto
+  border-top: $border
+  padding: 0 $u
+  a
+    line-height: $u*3
+    font-family: $ui-font
+
+#sessions--new
+  +box
+  +cast-shadow
+  margin: $u*5
+  padding: $u*2
+  background: $fg
+  form
+    display: flex
+    flex-direction: column
+    gap: $u
+    label
+      font-family: $ui-font
+    input
+      all: unset
+      +text_input
+    a, input[type=submit]
+      text-transform: uppercase
+    .controls em
+      padding: 0 $u
+      display: inline-block
+    button, input[type=submit]
+      @extend .linkified-button
+
+#users--new
+  @extend #sessions--new

@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@400;600&family=Maven+Pro:wght@400;800&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+.page-section, #note--edit, #note--new,
+body > section.page {
+  max-width: 900px;
+  width: 100%;
+  padding: 20px;
+}
+
+section.controls {
+  display: flex;
+  gap: 10px;
+}
+section.controls > .right {
+  margin-left: auto;
+}
+
+.note-box, #note--edit form, #note--new form, #note--show #note {
+  border: 2px solid #39373e;
+  padding: 10px;
+  box-shadow: 5px 5px 0 0 #39373e;
+  transition: box-shadow 500ms;
+  display: block;
+  background: #f9ffa8;
+  width: 100%;
+}
+.note-box section.controls, #note--edit form section.controls, #note--new form section.controls, #note--show #note section.controls {
+  display: flex;
+  gap: 10px;
+}
+.note-box a, #note--edit form a, #note--new form a, #note--show #note a, .note-box button, #note--edit form button, #note--new form button, #note--show #note button, .note-box input, #note--edit form input, #note--new form input, #note--show #note input {
+  all: unset;
+  border: 2px solid #39373e;
+  padding: 10px;
+  display: inline-block;
+  line-height: 20px;
+  cursor: pointer;
+  padding: 10px;
+  overflow: clip;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 800;
+}
+.note-box a.danger, #note--edit form a.danger, #note--new form a.danger, #note--show #note a.danger, .note-box button.danger, #note--edit form button.danger, #note--new form button.danger, #note--show #note button.danger, .note-box input.danger, #note--edit form input.danger, #note--new form input.danger, #note--show #note input.danger {
+  border-color: #fa7d7d;
+}
+.note-box a:hover, #note--edit form a:hover, #note--new form a:hover, #note--show #note a:hover, .note-box button:hover, #note--edit form button:hover, #note--new form button:hover, #note--show #note button:hover, .note-box input:hover, #note--edit form input:hover, #note--new form input:hover, #note--show #note input:hover {
+  background: #39373e;
+  color: #fa7d7d;
+}
+
+a {
+  color: #39373e;
+  font-weight: bold;
+  text-decoration: underline;
+}
+a:hover {
+  color: #fa7d7d;
+  background: #39373e;
+}
+
+.linkified-button, #sessions--new form button, #users--new form button, #sessions--new form input[type=submit], #users--new form input[type=submit] {
+  all: unset;
+  color: #39373e;
+  font-weight: bold;
+  text-decoration: underline;
+  display: inline;
+}
+.linkified-button:hover, #sessions--new form button:hover, #users--new form button:hover, #sessions--new form input[type=submit]:hover, #users--new form input[type=submit]:hover {
+  color: #fa7d7d;
+  background: #39373e;
+}
+
+body, html {
+  background: #fffdf1;
+  color: #39373e;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Bitter", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+::selection {
+  background: #39373e;
+  color: #fa7d7d;
+}
+
+p.notice-bar, p.alert-bar {
+  display: block;
+}
+
+#note--index {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+}
+#note--index #bar {
+  top: 0;
+  display: flex;
+  position: fixed;
+  background: #fffef9;
+  border-bottom: 2px solid #39373e;
+  justify-content: center;
+  width: 100%;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 800;
+}
+#note--index #bar input, #note--index #bar a {
+  all: unset;
+  display: block;
+  height: 50px;
+  line-height: 50px;
+}
+#note--index #bar a, #note--index #bar input[type=submit] {
+  cursor: pointer;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#note--index #bar a:hover, #note--index #bar input[type=submit]:hover {
+  background: #39373e;
+  color: #fa7d7d;
+}
+#note--index #bar ::placeholder {
+  color: #39373e;
+  font-weight: normal;
+}
+#note--index #bar > section,
+#note--index #bar > form {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  max-width: 900px;
+  display: flex;
+}
+#note--index #bar > section input#query,
+#note--index #bar > form input#query {
+  flex: 1;
+  font-weight: normal;
+}
+#note--index #notes {
+  max-width: 900px;
+  width: 100%;
+  display: grid;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+#note--index #notes .note-outer {
+  all: unset;
+  border: 2px solid #39373e;
+  padding: 10px;
+  box-shadow: 5px 5px 0 0 #39373e;
+  transition: box-shadow 500ms;
+  cursor: pointer;
+  display: block;
+  background: #f9ffa8;
+}
+#note--index #notes .note-outer:hover {
+  box-shadow: 10px 10px 0 0 #39373e;
+}
+
+#note--show {
+  max-width: 900px;
+  width: 100%;
+  padding: 20px;
+}
+#note--edit form, #note--new form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+#note--edit form textarea, #note--new form textarea {
+  all: unset;
+  background: #fffdf1;
+  padding: 10px;
+  min-height: 200px;
+  border: 2px solid #39373e;
+}
+
+#root--footer {
+  background: #fffef9;
+  width: 100%;
+  margin-top: auto;
+  border-top: 2px solid #39373e;
+  padding: 0 10px;
+}
+#root--footer a {
+  line-height: 30px;
+  font-family: "Maven Pro", sans-serif;
+}
+
+#sessions--new, #users--new {
+  border: 2px solid #39373e;
+  padding: 10px;
+  box-shadow: 5px 5px 0 0 #39373e;
+  transition: box-shadow 500ms;
+  margin: 50px;
+  padding: 20px;
+  background: #fffef9;
+}
+#sessions--new form, #users--new form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#sessions--new form label, #users--new form label {
+  font-family: "Maven Pro", sans-serif;
+}
+#sessions--new form input, #users--new form input {
+  all: unset;
+  border: 2px solid #39373e;
+  padding: 10px;
+  background: #fffef9;
+}
+#sessions--new form a, #users--new form a, #sessions--new form input[type=submit], #users--new form input[type=submit] {
+  text-transform: uppercase;
+}
+#sessions--new form .controls em, #users--new form .controls em {
+  padding: 0 10px;
+  display: inline-block;
+}
