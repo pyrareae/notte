@@ -3,7 +3,7 @@ class NotesController < ApplicationController
 
   # GET /notes or /notes.json
   def index
-    @notes = current_user.notes
+    @notes = current_user.notes.order(created_at: :desc)
 
     if params[:query]
       @notes = @notes.where 'note LIKE ?', "%#{params[:query]}%"
