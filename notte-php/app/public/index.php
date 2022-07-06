@@ -1,2 +1,2 @@
 <?php
-echo phpinfo();
+$db = require '/app/lib/db.php';

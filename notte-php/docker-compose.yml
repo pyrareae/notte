@@ -17,13 +17,17 @@ services:
             - ./app:/app
         links:
             - mysql
+        environment:
+            MYSQL_USER: 'root'
+            MYSQL_PASSWORD: 'secret'
+            MYSQL_DATABASE: 'notte'
     mysql:
         image: mariadb:latest
         environment:
-            MYSQL_ROOT_PASSWORD: 'devel_password'
+            MYSQL_ROOT_PASSWORD: 'secret'
             MYSQL_USER: 'notte'
-            MYSQL_PASSWORD: 'devel_password'
-            MYSQL_DATABASE: 'notte'
+            MYSQL_PASSWORD: 'secret'
+            MYSQL_DATABASE: 'notte-app'
         volumes:
             - mysqldata:/var/lib/mysql
         ports:
