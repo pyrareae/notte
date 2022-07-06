@@ -8,42 +8,35 @@ const router = createRouter({
       path: "/",
       redirect: "/notes",
     },
-    // {
-    //   path: "/notes",
-    //   name: "Notes",
-    //   component: () => import("../views/NotesView.vue"),
-    //   children: [
-    //     {
-    //       path: "/:id",
-    //       name: "Note",
-    //       component: () => import("../views/NoteView.vue"),
-    //     },
-    //     {
-    //       path: "/new",
-    //       name: "New Note",
-    //       component: () => import("../views/NewNoteView.vue"),
-    //     },
-    //   ]
-    // },
     {
       path: "/notes",
       name: "Notes",
-      component: () => import("../views/NotesView.vue"),
+      component: () => import("@/views/NotesView.vue"),
+    },
+    {
+      path: "/notes/new",
+      name: "New Note",
+      component: () => import("@/views/NewNoteView.vue"),
     },
     {
       path: "/notes/:id",
       name: "Note",
-      component: () => import("../views/NoteView.vue"),
+      component: () => import("@/views/NoteView.vue"),
+    },
+    {
+      path: "/notes/:id/edit",
+      name: "Edit Note",
+      component: () => import("@/views/EditNoteView.vue"),
     },
     {
       path: "/log_in",
       name: "Log In",
-      component: () => import("../views/LogInView.vue"),
+      component: () => import("@/views/LogInView.vue"),
     },
     {
       path: "/sign_up",
       name: "Sign Up",
-      component: () => import("../views/SignUpView.vue"),
+      component: () => import("@/views/SignUpView.vue"),
     },
   ],
 });
