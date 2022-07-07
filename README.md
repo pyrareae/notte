@@ -55,6 +55,7 @@ A loose todo list of different versions I might do. Some are much more interesti
 - Crystal
 - C++
   - Oatpp
+  - Qt/QML
 - Go
 - Python
   - Flask
