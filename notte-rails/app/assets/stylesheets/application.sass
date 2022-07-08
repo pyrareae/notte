@@ -1,3 +1,6 @@
+// The master stylesheet for the notte projects.
+// Normally I do not keep all the styles in a single file. However in this case I value having everything in a single file over slight extra organization.
+  
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;600&family=Maven+Pro:wght@400;800&display=swap')
 
 $bitter-font: 'Bitter', serif
@@ -118,6 +121,28 @@ a
   +link
   display: inline
 
+.flash
+  +box
+  position: fixed
+  top: $u
+  right: $u
+  padding: 2*$u
+  background: $blue
+  font-family: $ui-font
+  z-index: 10
+
+  .close
+    position: absolute
+    top: 0
+    right: 0
+    cursor: pointer
+    &:hover
+      background: $dark
+      color: $red
+  &-alert
+    background: $red
+  // &-info
+
 body, html
   background: $light
   color: $dark
@@ -132,10 +157,6 @@ body, html
 ::selection 
   background: $dark
   color: $red
-
-
-p.notice-bar, p.alert-bar
-  display: block
 
 #note--index
   width: 100%
