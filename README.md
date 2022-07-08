@@ -70,12 +70,16 @@ A loose todo list of different versions I might do. Some are much more interesti
   - Next
   - Express
   - Nest
+- Vanilla JS
 - React
 - Svelte
 - Angular1&2
 - Imba
 - Elm
 - Phoenix
+- Flutter
+- Rust
+- Nim
 
 # Contributing
 This is a personal project, so I don't accept PRs. Feel free to fork this and play with it though! 😺
