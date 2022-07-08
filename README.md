@@ -38,7 +38,7 @@ I also find Pinia a nice break from overly convoluted state management. I test t
 
 ## notte-php (WIP)
 
-This is just bare PHP that I'm wrangling into an ad-hoc MVC structure. I've done a toy project with PHP like this before but other than that I have not used PHP much. I'm finding it a strange contrast to how Laravel is presented as very modern, while much information about PHP itself seems rather basic and outdated compared to what I'm used to in Ruby and JS land. The language itself is interesting, but feels a bit clunky compared to my usual gotos.
+This is just bare PHP that I'm wrangling into an ad-hoc MVC structure.
 
 ## notte-laravel
 TODO
