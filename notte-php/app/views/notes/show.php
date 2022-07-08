@@ -1,4 +1,4 @@
-<?php include dirname(__FILE__) . '/../partials/header.php' ?>
+<?php require __DIR__ . '/../partials/header.php' ?>
 <div id="note--show">
   <div id="note">
     <section class="body">
@@ -13,4 +13,4 @@
     </section>
   </div>
 </div>
-<?php include dirname(__FILE__) . '/../partials/footer.php' ?>
+<?php require __DIR__ . '/../partials/footer.php' ?>
