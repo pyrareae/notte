@@ -33,12 +33,12 @@ class Route {
   }
 
   public function patch($func) {
-    if ($_SERVER['REQUEST_METHOD'] == 'PATCH') $func();
+    if ($_SERVER['REQUEST_METHOD'] == 'PATCH' || $_POST['method'] == 'PATCH') $func();
     return $this;
   }
 
   public function delete($func) {
-    if ($_SERVER['REQUEST_METHOD'] == 'DELETE') $func();
+    if ($_SERVER['REQUEST_METHOD'] == 'DELETE' || $_POST['_method'] == 'DELETE') $func();
     return $this;
   }
 }

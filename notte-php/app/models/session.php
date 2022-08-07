@@ -1,12 +1,11 @@
 <?php
-
 namespace Model;
 
-require 'application_model.php';
+require_once 'application_model.php';
 
 class Session extends Application {
   public function createSession($username, $email) {
-    $token = random_bytes(255)
+    $token = random_bytes(255);
     
   }
 
@@ -20,7 +19,7 @@ class Session extends Application {
   }
 
   public function destroySession($token) {
-    return $this->db->prepate('
+    return $this->db->prepare('
       DELETE from user_sessions
       WHERE token = :token
     ')->execute(array(
@@ -29,7 +28,7 @@ class Session extends Application {
   }
 
   public function destroyAllSessionsForUser($user_id) {
-    return $this->db->prepate('
+    return $this->db->prepare('
       DELETE from user_sessions
       WHERE user_id = :user_id
     ')->execute(array(
@@ -42,5 +41,14 @@ class Session extends Application {
     if (!isset($_SESSION['token'])) return;
 
     return (new Session)->findSession($_SESSION['token']);
+  }
+
+  static public function userId() {
+    if(!isset($_SESSION['authorization'])) return;
+    $token = $_SESSION['authorization'];
+    if(is_null($token)) return;
+    
+    $session = new Session();
+    return $session->findSession($token)['id'];
   }
 }

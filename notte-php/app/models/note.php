@@ -1,27 +1,29 @@
 <?php
-
 namespace Model;
 
-require 'application_model.php';
+require_once 'application_model.php';
+require_once 'session.php';
 
 class Note extends Application {
   public function getNote($id) {
-    return $this->db->prepare('
+    $stm = $this->db->prepare('
       SELECT * FROM notes
       WHERE user_id = :user_id AND
       note.id = :note_id
-    ')->execute(array(
-      'user_id' => $this.userId(),
+    ');
+    $stm->execute(array(
+      'user_id' => Session->userId(),
       'note_id' => $id
-    ))->fetchObject();
+    ));
+    return $stm->fetchObject();
   }
 
   public function getAllNotes() {
-    return $this->db->prepare('
+    $stm = $this->db->prepare('
       SELECT * FROM notes
       WHERE user_id = :user_id
-    ')->execute(
-      array('user_id' => $this.userId())
-    )->fetchAll();
+    ');
+    $stm->execute(array('user_id' => Session::userId()));
+    return $stm->fetchAll();
   }
 }

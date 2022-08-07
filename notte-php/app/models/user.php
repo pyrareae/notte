@@ -1,8 +1,7 @@
 <?php
-
 namespace Model;
 
-require 'application_model.php';
+require_once 'application_model.php';
 
 class User extends Application {
 }

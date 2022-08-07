@@ -2,15 +2,31 @@
 
 require __DIR__ . '/../lib/router.php';
 
+// spl_autoload_register(function ($class_name) {
+//     include  __DIR__ . '/../models/' . strtolower($class_name) . '.php';
+// });
+
+
+include __DIR__.'/../models/note.php';
+include __DIR__.'/../views/layout.php';
 // The routes in a convenient mini dsl!
 
 (new Router())
+  ->route('\/?', function($route) {
+    http_response_code(301);
+    header('Location: /notes');
+    exit();
+  })
   ->route('\/notes\/?', function($route) {
-    echo "test";
     $route
       ->get(function() {
-        echo "test2";
-        require __DIR__ . '/../views/notes/index.php'; 
+        $ctx = new stdClass(); // context for view rendering
+        $Note = new Model\Note(); // model instance
+
+        $ctx->notes = $Note->getAllNotes();
+        $ctx->mew = 'mew';
+
+        layout(__DIR__ . '/../views/notes/index.php', $ctx); 
       })
       ->post(function() {
 

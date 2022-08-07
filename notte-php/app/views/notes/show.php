@@ -1,4 +1,3 @@
-<?php require __DIR__ . '/../partials/header.php' ?>
 <div id="note--show">
   <div id="note">
     <section class="body">
@@ -13,4 +12,3 @@
     </section>
   </div>
 </div>
-<?php require __DIR__ . '/../partials/footer.php' ?>
