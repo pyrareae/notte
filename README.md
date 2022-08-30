@@ -42,10 +42,17 @@ This is just bare PHP that I'm wrangling into an ad-hoc MVC structure.
 ## notte-laravel
 TODO
 
+# General Todo
+
+- Change the HTML and CSS structure to be more consistant.
+  - Use one and only one master stylesheet for all apps.
+- Get 100% parity on Rails/Vue before moving forward.
+- Add some missing UI elements, and smooth over some rough edges.
+- Clean up scaffoldinf junk that doesn't need to be there.
 
 # Possible Future Implementations
 
-A loose todo list of different versions I might do. Some are much more interesting and obscure than others.
+A loose todo list of different versions I might do eventually, but it would be completely impractical to think of doing them all.
 
 - Ruby
   - Roda
