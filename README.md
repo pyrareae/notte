@@ -1,5 +1,10 @@
 # Notte
 ## A note keeping demo in multiple implementations
+## Goals & Principles 
+- Comparison between frameworks.
+- Learning new langs & frameworks.
+- Avoiding the use of any CSS framework.
+- KISS -- keep it easy to port.
 
 # Implementations
 There are 3 roles the projects can have, SPA app, MPA app, and API server. Some of the servers can fill multiple roles. The SPA apps need a running api server to function.
@@ -44,11 +49,12 @@ TODO
 
 # General Todo
 
-- Change the HTML and CSS structure to be more consistant.
-  - Use one and only one master stylesheet for all apps.
+- Change the HTML and CSS structure to be more consistent.
+  - Use one and only one stylesheet for all apps -- little/no changes allowed.
 - Get 100% parity on Rails/Vue before moving forward.
 - Add some missing UI elements, and smooth over some rough edges.
 - Clean up scaffoldinf junk that doesn't need to be there.
+- Better mobile exp.
 
 # Possible Future Implementations
 
