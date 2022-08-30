@@ -13,7 +13,6 @@ There are 3 roles the projects can have, SPA app, MPA app, and API server. Some 
 |notte-roda|API|No||TODO|
 |notte-laravel|MPA/API|MPA||TODO|
 |notte-react|No|SPA||TODO|
-|notte-angular-legacy|No|SPA||TODO|
 |notte-angular-2|No|SPA||TODO|
 |notte-express|API|No||TODO|
 
@@ -80,6 +79,3 @@ A loose todo list of different versions I might do. Some are much more interesti
 - Flutter
 - Rust
 - Nim
-
-# Contributing
-This is a personal project, so I don't accept PRs. Feel free to fork this and play with it though! 😺
