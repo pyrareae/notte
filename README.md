@@ -41,9 +41,9 @@ I like Vue, I've been using a mixture of the new composition API and the object 
 I also find Pinia a nice break from overly convoluted state management. I test to avoid Redux style systems, typically just using a shared reactive object or a messaging bus if need be. Pinia Is basically the approach I've taken before as it's essentially with a Vue observable with some actions bolted on, but without the annoying verbosity of defining mutators, and getters, and setters for every single attribute. However I really didn't need to use a global state in this app at all, I just wanted to try out Pinia.
 
 ### Usage notes
-Notte-Vue requires an api server running on port 5000.
-Start the Rails server: `rails s -p5000`
-Start the Vue server: `yarn run dev`
+Notte-Vue requires an api server running on port 5000.  
+Start the Rails server: `rails s -p5000`  
+Start the Vue server: `yarn run dev`  
 
 ## notte-php (WIP)
 
