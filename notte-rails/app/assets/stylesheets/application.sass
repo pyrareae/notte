@@ -82,6 +82,7 @@ $u: 10px
   color: $dark
   font-weight: bold
   text-decoration: underline
+  cursor: pointer
   &:hover
     color: $red
     background: $dark
@@ -136,6 +137,7 @@ a
     top: 0
     right: 0
     cursor: pointer
+    padding: 3px
     &:hover
       background: $dark
       color: $red
@@ -210,7 +212,8 @@ body, html
       right: $u*2
       bottom: $u*2
     gap: 15px
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) // arcane grid rules
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+    grid-auto-rows: 1fr
     .note-outer
       all: unset 
       +box
@@ -218,6 +221,11 @@ body, html
       cursor: pointer
       display: block
       background: $yellow
+    .note .body
+      display: -webkit-box
+      -webkit-line-clamp: 3
+      -webkit-box-orient: vertical
+      overflow: hidden
 
 #note--show
   max-width: $page_width
@@ -234,6 +242,7 @@ body, html
     flex-direction: column
     align-items: stretch
     gap: $u
+    white-space: break-spaces
     textarea
       all: unset
       background: $light

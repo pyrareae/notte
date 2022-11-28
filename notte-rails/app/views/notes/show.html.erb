@@ -1,7 +1,7 @@
 <div id='note--show'>
   <div id='note'>
     <section class='body'>
-      <%= simple_format @note.note %>
+      <%= raw markdown.render @note.note %>
     </section>
     <section class='controls'>
       <%= link_to "Edit", edit_note_path(@note) %>
