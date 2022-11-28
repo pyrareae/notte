@@ -1,6 +1,11 @@
 # Notte
 ![screenshot](screenshot.png)
 ## A note keeping demo in multiple implementations
+## Goals & Principles 
+- Comparison between frameworks.
+- Learning new langs & frameworks.
+- Avoiding the use of any CSS framework.
+- KISS -- keep it easy to port.
 
 # Implementations
 There are 3 roles the projects can have, SPA app, MPA app, and API server. Some of the servers can fill multiple roles. The SPA apps need a running api server to function.
@@ -35,6 +40,11 @@ Interestingly this was easier to build a full UI (including the css design that 
 I like Vue, I've been using a mixture of the new composition API and the object API. Strictly speaking it would be better to only use the comp API though, however I find that for some situations the object API is a little faster to use. I really like that Vue has it's own version of React hooks now with the comp API, and I think it's a really neat way of doing things.
 
 I also find Pinia a nice break from overly convoluted state management. I test to avoid Redux style systems, typically just using a shared reactive object or a messaging bus if need be. Pinia Is basically the approach I've taken before as it's essentially with a Vue observable with some actions bolted on, but without the annoying verbosity of defining mutators, and getters, and setters for every single attribute. However I really didn't need to use a global state in this app at all, I just wanted to try out Pinia.
+
+### Usage notes
+Notte-Vue requires an api server running on port 5000.  
+Start the Rails server: `rails s -p5000`  
+Start the Vue server: `yarn run dev`  
 
 ## notte-php (WIP)
 
