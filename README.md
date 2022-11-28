@@ -1,4 +1,5 @@
 # Notte
+![screenshot](screenshot.png)
 ## A note keeping demo in multiple implementations
 
 # Implementations
@@ -38,44 +39,3 @@ I also find Pinia a nice break from overly convoluted state management. I test t
 ## notte-php (WIP)
 
 This is just bare PHP that I'm wrangling into an ad-hoc MVC structure.
-
-## notte-laravel
-TODO
-
-
-# Possible Future Implementations
-
-A loose todo list of different versions I might do. Some are much more interesting and obscure than others.
-
-- Ruby
-  - Roda
-  - Sinatra
-  - Barebones rack
-- Crystal
-- C++
-  - Oatpp
-  - Qt/QML
-- Go
-- Python
-  - Flask
-  - Django
-- Lua
-- Common Lisp
-- Racket
-- Clojure
-- Perl
-- ASP.net
-- Node.js
-  - Next
-  - Express
-  - Nest
-- Vanilla JS
-- React
-- Svelte
-- Angular1&2
-- Imba
-- Elm
-- Phoenix
-- Flutter
-- Rust
-- Nim
